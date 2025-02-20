@@ -18,7 +18,7 @@ export default function LinkyPage() {
             </p>
             <br />
             <p>
-              otherwise, find me on <a href="https://www.twitter.com/awhmaisy/" target="_blank" className="hover:underline text-[#ca9ae5]">x</a> and <a href="https://www.instagram.com/awhmaisy" target="_blank" className="hover:underline text-[#ca9ae5]">instagram (ew).</a> i'd love to hear what you're building / learning as of late!
+              otherwise, find me on <a href="https://www.twitter.com/awhmaisy/" target="_blank" className="hover:underline text-[#ca9ae5]">x</a> and <a href="https://www.instagram.com/awhmaisy" target="_blank" className="hover:underline text-[#ca9ae5]">instagram (ew).</a> i&apos;d love to hear what you&apos;re building / learning as of late!
             </p>
             <br />
             <p>i do like to write</p>

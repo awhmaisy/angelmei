@@ -21,11 +21,12 @@ body {
   margin-right: auto;
   padding-left: 2px;
   padding-right: 2px;
-  margin-top: 20vh;
+  padding-top: 20vh;
   font-family: 'Akkurat Mono', monospace, sans-serif;
   color: white; 
   position: relative;
   background-color: var(--background);
+  min-height: 100vh;
 }
 
 body hr {

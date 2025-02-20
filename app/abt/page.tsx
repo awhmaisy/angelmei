@@ -68,7 +68,7 @@ export default function AboutPage() {
                         <br />
                         <p>────୨ৎ────</p>
                         <br />
-                        <p className="mb-1">misc texts i've sent myself recently</p>
+                        <p className="mb-1">misc texts ive sent myself recently</p>
                         <ul className="list-none space-y-1">
                             <li>
                                 lore procurement mode

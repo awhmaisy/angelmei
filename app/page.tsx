@@ -3,12 +3,14 @@
 import React, { useState, useEffect } from 'react';
 import PageLoader from './components/PageLoader';
 import Header from "./components/Header";
+
 export default function Home() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const isFirstVisit = localStorage.getItem('isFirstVisit') === null;
-    const isReload = performance.getEntriesByType('navigation')[0].type === 'reload';
+    const navEntry = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+    const isReload = navEntry.type === 'reload';
 
     if (isFirstVisit || isReload) {
       setLoading(true);
@@ -27,7 +29,6 @@ export default function Home() {
       {loading ? (
         <PageLoader />
       ) : (
-
         <div className="terminal-box">
           <div className="inner-content items-center justify-items-center min-h-screen px-8 sm:px-20 font-[family-name:Akkurat-Mono] bg-black text-white">
             <Header />
@@ -41,13 +42,13 @@ export default function Home() {
               <br />
               <div className="text-xs font-[Akkurat-Mono]">
                 <p className="mb-6">
-                  hi! i'm an ex-social media producer + manager, with expertise in relational engineering && cult building.
+                  hi! i&apos;m an ex-social media producer + manager, with expertise in relational engineering && cult building.
                 </p>
                 <p className="mb-6">
-                  i dropped out in 3rd grade to research nanotech at <a href="https://www.ucla.edu/" style={{ color: '#ca9ae5' }}>ucla BSC</a> and observe product/graphic design at <a href="https://www.artcenter.edu/" style={{ color: '#ca9ae5' }}>ACCD</a>. i was configuring a degree at <a href="https://iovine-young.usc.edu/" style={{ color: '#ca9ae5' }}>USC's iovine and young academy</a> for a year but dropped out after receiving prophetic callings to industrialize zones in ████ + convalesce!
+                  i dropped out in 3rd grade to research nanotech at <a href="https://www.ucla.edu/" style={{ color: '#ca9ae5' }}>ucla BSC</a> and observe product/graphic design at <a href="https://www.artcenter.edu/" style={{ color: '#ca9ae5' }}>ACCD</a>. i was configuring a degree at <a href="https://iovine-young.usc.edu/" style={{ color: '#ca9ae5' }}>USC&apos;s iovine and young academy</a> for a year but dropped out after receiving prophetic callings to industrialize zones in ████ + convalesce!
                 </p>
                 <p>
-                  currently manufacturing exclusively US-made garments for technical companies at <a href="https://mach012.com" style={{ color: '#ca9ae5' }}>MACH-12</a>. mostly in the form of branded merch, but i'm always up for a limited collection! aaaand retail soon :)
+                  currently manufacturing exclusively US-made garments for technical companies at <a href="https://mach012.com" style={{ color: '#ca9ae5' }}>MACH-12</a>. mostly in the form of branded merch, but i&apos;m always up for a limited collection! aaaand retail soon :)
                 </p>
                 <br />
                 <p>────୨ৎ────</p>
