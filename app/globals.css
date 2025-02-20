@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000000;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  font-size: 13px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2px;
+  padding-right: 2px;
+  margin-top: 20vh;
+  font-family: 'Akkurat Mono', monospace, sans-serif;
+  color: white; 
+  position: relative;
+  background-color: var(--background);
+}
+
+body hr {
+  border: none; 
+  text-align: center; 
+  color: white;
+  content: "✦ . 　⁺ 　 . ✦ . 　⁺ 　 . ✦"; 
+}
+
+body hr::before {
+  content: "✦ . 　⁺ 　 . ✦ . 　⁺ 　 . ✦"; 
+  display: inline-block;
+  margin-right: 10px; 
+}
+
+body ul, body ol {
+  list-style: none;
+  padding-left: 0;
+}
+
+body li::before {
+  content: ">";
+  margin-right: 0.5em;
+}
+
+body a:hover:not(.nav-link) {
+  text-decoration: underline;
+}
+
+@font-face {
+  font-family: 'scientificaItalic';
+  src: url('/public/fonts/scientificaItalic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'scientificaBold';
+  src: url('/public/fonts/scientificaBold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'scientifica';
+  src: url('/public/fonts/scientifica.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Garmin10';
+  src: url('../public/fonts/Garmin 10-5.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Garmin7'; 
+  src: url('../public/fonts/Garmin 7-4.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Garmin5';
+  src: url('../public/fonts/Garmin 5-3.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Creep';
+  src: url('/public/fonts/Creep-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Akkurat Mono';
+  src: url('/public/fonts/Akkurat Mono.woff') format('woff');
+}
+
+/* .terminal-box {
+  position: relative;
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 20px 20px; 
+  box-sizing: border-box;
+  background-color: #000;
+  color: #fff; 
+}
+
+.terminal-box::before,
+.terminal-box::after {
+  content: " ";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ca9ae5;
+  font-size: 0.8rem;
+}
+
+.terminal-box::before {
+  content: "╭────── · · ୨୧ · · ──────╮";
+  top: -20px;
+}
+
+.terminal-box::after {
+  content: "╰────── · · ୨୧ · · ──────╯";
+  bottom: -20px;
+}
+
+.inner-content {
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+.terminal-box::before {
+  content: "╭────── · · ୨୧ · · ──────╮";
+  top: -20px;
+}
+
+*/
