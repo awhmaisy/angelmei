@@ -54,7 +54,13 @@ export default function Home() {
         <PageLoader />
       ) : (
         <div className="terminal-box">
-          <div className="inner-content items-center justify-items-center min-h-screen px-8 sm:px-20 font-akkurat bg-black text-white">
+          <div className="inner-content items-center justify-items-center min-h-screen px-8 sm:px-20 bg-black text-white">
+            <div className="fixed top-0 left-0 p-4 text-xs">
+              <p className="font-akkurat">Akkurat Test</p>
+              <p className="font-scientifica">Scientifica Test</p>
+              <p className="font-creep">Creep Test</p>
+              <p className="font-garmin">Garmin Test</p>
+            </div>
             <Header />
             <main className="flex flex-col row-start-2 items-start max-w-lg">
               <div>
@@ -64,7 +70,7 @@ export default function Home() {
                 </p>
               </div>
               <br />
-              <div className="text-xs font-[Akkurat-Mono]">
+              <div className="text-xs font-akkurat">
                 <p className="mb-6">
                   hi! i&apos;m an ex-social media producer + manager, with expertise in relational engineering && cult building.
                 </p>

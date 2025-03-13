@@ -8,10 +8,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        scientifica: ['var(--font-scientifica)', 'monospace'],
-        akkurat: ['var(--font-akkurat-mono)', 'monospace'],
-        creep: ['var(--font-creep)', 'monospace'],
-        garmin: ['var(--font-garmin)', 'monospace'],
+        scientifica: ['var(--font-scientifica)'],
+        akkurat: ['var(--font-akkurat-mono)'],
+        creep: ['var(--font-creep)'],
+        garmin: ['var(--font-garmin)'],
       },
     },
   },
