@@ -33,6 +33,21 @@
   .font-garmin {
     font-family: var(--font-garmin), monospace;
   }
+
+  @font-face {
+    font-family: 'Akkurat Mono';
+    src: url('/fonts/Akkurat-Mono.woff') format('woff');
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Garmin';
+    src: 
+      url('/fonts/Garmin 10-5.woff2') format('woff2'),
+      url('/fonts/Garmin 7-4.woff2') format('woff2'),
+      url('/fonts/Garmin 5-3.woff2') format('woff2');
+    font-display: swap;
+  }
 }
 
 @media (prefers-color-scheme: dark) {

@@ -28,7 +28,8 @@ const scientifica = localFont({
 const akkuratMono = localFont({
   src: '../public/fonts/Akkurat-Mono.woff',
   variable: '--font-akkurat-mono',
-  display: 'swap'
+  display: 'swap',
+  preload: true
 })
 
 const creep = localFont({
@@ -56,7 +57,8 @@ const garmin = localFont({
     }
   ],
   variable: '--font-garmin',
-  display: 'swap'
+  display: 'swap',
+  preload: true
 })
 
 export const metadata: Metadata = {
