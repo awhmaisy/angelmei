@@ -18,13 +18,13 @@ export default function Home() {
   const projects: Project[] = [
     {
       title: "CHECKMATE",
-      description: "A terminal-style interface with secure connection simulation and ASCII art. Built with modern web technologies.",
+      description: "early-edition @source_os. play chess with her.",
       url: "https://checkmate-xi.vercel.app/",
-      imageUrl: "/checkmate-preview.png" // You'll need to add this image to your public folder
+      imageUrl: "/checkmate-preview.jpeg" // You'll need to add this image to your public folder
     },
     {
       title: "MACH-12",
-      description: "US-made garments manufacturing platform for technical companies. Branded merch and limited collections.",
+      description: "US-made garments and manufacturing for technical companies. retail site here.",
       url: "https://mach012.com",
       imageUrl: "/mach12-preview.png" // You'll need to add this image to your public folder
     }
@@ -92,10 +92,10 @@ export default function Home() {
                 </ul>
               </div>
               
-              <div className="mt-12">
+              <div className="mt-6">
                 <p>────୨ৎ────</p>
                 <br />
-                <p className="text-xs mb-6">projects</p>
+                <p className="text-xs mb-6">happy fun lovely things</p>
                 
                 <div className="grid grid-cols-1 gap-6">
                   {projects.map((project, index) => (
