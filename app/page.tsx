@@ -3,9 +3,33 @@
 import React, { useState, useEffect } from 'react';
 import PageLoader from './components/PageLoader';
 import Header from "./components/Header";
+import Image from 'next/image';
+
+interface Project {
+  title: string;
+  description: string;
+  url: string;
+  imageUrl: string;
+}
 
 export default function Home() {
   const [loading, setLoading] = useState(false);
+  
+  const projects: Project[] = [
+    {
+      title: "CHECKMATE",
+      description: "A terminal-style interface with secure connection simulation and ASCII art. Built with modern web technologies.",
+      url: "https://checkmate-xi.vercel.app/",
+      imageUrl: "/checkmate-preview.png" // You'll need to add this image to your public folder
+    },
+    {
+      title: "MACH-12",
+      description: "US-made garments manufacturing platform for technical companies. Branded merch and limited collections.",
+      url: "https://mach012.com",
+      imageUrl: "/mach12-preview.png" // You'll need to add this image to your public folder
+    }
+    // Add more projects as needed
+  ];
 
   useEffect(() => {
     const isFirstVisit = localStorage.getItem('isFirstVisit') === null;
@@ -30,11 +54,11 @@ export default function Home() {
         <PageLoader />
       ) : (
         <div className="terminal-box">
-          <div className="inner-content items-center justify-items-center min-h-screen px-8 sm:px-20 font-[family-name:Akkurat-Mono] bg-black text-white">
+          <div className="inner-content items-center justify-items-center min-h-screen px-8 sm:px-20 font-akkurat bg-black text-white">
             <Header />
             <main className="flex flex-col row-start-2 items-start max-w-lg">
               <div>
-                <h1 className="text-2xl font-[scientificaItalic] text-[#ca9ae5]">maisy</h1>
+                <h1 className="text-2xl font-scientifica italic text-[#ca9ae5]">maisy</h1>
                 <p>
                   <a href="https://x.com/awhmaisy" className="text-xs hover:underline">@awhmaisy</a> / <a href="mailto:m@mach012.com" className="text-xs hover:underline">m@mach012.com</a> ⊹⁎⁺ ✧ ♡
                 </p>
@@ -66,6 +90,48 @@ export default function Home() {
                   <li>metallurgy, particularly in pretty objects but machinery too</li>
                   <li>cognition judgement in context of military acuity</li>
                 </ul>
+              </div>
+              
+              <div className="mt-12">
+                <p>────୨ৎ────</p>
+                <br />
+                <p className="text-xs mb-6">projects</p>
+                
+                <div className="grid grid-cols-1 gap-6">
+                  {projects.map((project, index) => (
+                    <a 
+                      key={index} 
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer" 
+                      className="block"
+                    >
+                      <div className="border border-[#ca9ae5] bg-black p-4">
+                        <div className="relative w-full mb-4">
+                          <Image
+                            src={project.imageUrl}
+                            alt={project.title}
+                            width={1920}
+                            height={1080}
+                            style={{ width: '100%', height: 'auto' }}
+                            className="object-left"
+                            priority
+                            unoptimized
+                          />
+                        </div>
+                        <h3 className="text-[#ca9ae5] text-lg mb-2 font-[scientificaItalic]">
+                          {project.title}
+                        </h3>
+                        <p className="text-xs opacity-70">
+                          {project.description}
+                        </p>
+                        <div className="mt-2 text-xs text-[#ca9ae5] opacity-70">
+                          ⊹⁎⁺ view project ✧ ♡
+                        </div>
+                      </div>
+                    </a>
+                  ))}
+                </div>
               </div>
             </main>
           </div>

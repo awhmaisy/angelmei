@@ -3,8 +3,32 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #000000;
+  --background: #000000;
+  --foreground: #ededed;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-akkurat-mono);
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-scientifica);
+  }
+
+  .font-scientifica {
+    font-family: var(--font-scientifica);
+  }
+
+  .font-akkurat {
+    font-family: var(--font-akkurat-mono);
+  }
+
+  .font-creep {
+    font-family: var(--font-creep);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,10 +46,7 @@ body {
   padding-left: 2px;
   padding-right: 2px;
   padding-top: 20vh;
-  font-family: 'Akkurat Mono', monospace, sans-serif;
-  color: white; 
   position: relative;
-  background-color: var(--background);
   min-height: 100vh;
 }
 
@@ -58,53 +79,54 @@ body a:hover:not(.nav-link) {
 
 @font-face {
   font-family: 'scientificaItalic';
-  src: url('/public/fonts/scientificaItalic.woff') format('woff');
+  src: url('/fonts/scientificaItalic.woff') format('woff');
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'scientificaBold';
-  src: url('/public/fonts/scientificaBold.woff') format('woff');
+  src: url('/fonts/scientificaBold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'scientifica';
-  src: url('/public/fonts/scientifica.woff') format('woff');
+  src: url('/fonts/scientifica.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'Garmin10';
-  src: url('../public/fonts/Garmin 10-5.woff2') format('woff2');
+  src: url('/fonts/Garmin 10-5.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Garmin7'; 
-  src: url('../public/fonts/Garmin 7-4.woff2') format('woff2');
+  src: url('/fonts/Garmin 7-4.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Garmin5';
-  src: url('../public/fonts/Garmin 5-3.woff2') format('woff2');
+  src: url('/fonts/Garmin 5-3.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Creep';
-  src: url('/public/fonts/Creep-Regular.woff2') format('woff2');
+  src: url('/fonts/Creep Regular.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Akkurat Mono';
-  src: url('/public/fonts/Akkurat Mono.woff') format('woff');
+  src: url('/fonts/Akkurat-Mono.woff') format('woff');
 }
 
 /* .terminal-box {
