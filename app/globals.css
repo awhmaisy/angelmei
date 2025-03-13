@@ -9,25 +9,29 @@
 
 @layer base {
   body {
-    font-family: var(--font-akkurat-mono);
+    font-family: var(--font-akkurat-mono), monospace;
     background-color: var(--background);
     color: var(--foreground);
   }
 
   h1, h2, h3 {
-    font-family: var(--font-scientifica);
+    font-family: var(--font-scientifica), monospace;
   }
 
   .font-scientifica {
-    font-family: var(--font-scientifica);
+    font-family: var(--font-scientifica), monospace;
   }
 
   .font-akkurat {
-    font-family: var(--font-akkurat-mono);
+    font-family: var(--font-akkurat-mono), monospace;
   }
 
   .font-creep {
-    font-family: var(--font-creep);
+    font-family: var(--font-creep), monospace;
+  }
+
+  .font-garmin {
+    font-family: var(--font-garmin), monospace;
   }
 }
 
@@ -75,58 +79,6 @@ body li::before {
 
 body a:hover:not(.nav-link) {
   text-decoration: underline;
-}
-
-@font-face {
-  font-family: 'scientificaItalic';
-  src: url('/fonts/scientificaItalic.woff') format('woff');
-  font-weight: normal;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'scientificaBold';
-  src: url('/fonts/scientificaBold.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'scientifica';
-  src: url('/fonts/scientifica.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Garmin10';
-  src: url('/fonts/Garmin 10-5.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Garmin7'; 
-  src: url('/fonts/Garmin 7-4.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Garmin5';
-  src: url('/fonts/Garmin 5-3.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Creep';
-  src: url('/fonts/Creep Regular.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Akkurat Mono';
-  src: url('/fonts/Akkurat-Mono.woff') format('woff');
 }
 
 /* .terminal-box {
