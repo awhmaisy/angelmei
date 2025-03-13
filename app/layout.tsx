@@ -6,17 +6,17 @@ import localFont from 'next/font/local'
 const scientifica = localFont({
   src: [
     {
-      path: '../app/assets/fonts/scientifica.woff',
+      path: '../public/fonts/scientifica.woff',
       weight: '400',
       style: 'normal',
     },
     {
-      path: '../app/assets/fonts/scientificaItalic.woff',
+      path: '../public/fonts/scientificaItalic.woff',
       weight: '400',
       style: 'italic',
     },
     {
-      path: '../app/assets/fonts/scientificaBold.woff',
+      path: '../public/fonts/scientificaBold.woff',
       weight: '700',
       style: 'normal',
     }
@@ -26,14 +26,14 @@ const scientifica = localFont({
 })
 
 const akkuratMono = localFont({
-  src: '../app/assets/fonts/Akkurat-Mono.woff',
+  src: '../public/fonts/Akkurat-Mono.woff',
   variable: '--font-akkurat-mono',
   display: 'swap',
   preload: true
 })
 
 const creep = localFont({
-  src: '../app/assets/fonts/Creep Regular.woff',
+  src: '../public/fonts/Creep Regular.woff',
   variable: '--font-creep',
   display: 'swap',
   preload: true
@@ -42,17 +42,17 @@ const creep = localFont({
 const garmin = localFont({
   src: [
     {
-      path: '../app/assets/fonts/Garmin 10-5.woff2',
+      path: '../public/fonts/Garmin 10-5.woff2',
       weight: '400',
       style: 'normal',
     },
     {
-      path: '../app/assets/fonts/Garmin 7-4.woff2',
+      path: '../public/fonts/Garmin 7-4.woff2',
       weight: '400',
       style: 'normal',
     },
     {
-      path: '../app/assets/fonts/Garmin 5-3.woff2',
+      path: '../public/fonts/Garmin 5-3.woff2',
       weight: '400',
       style: 'normal',
     }
