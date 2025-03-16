@@ -21,13 +21,9 @@ export default function Header() {
           const popup = document.createElement('div');
           popup.className = 'popup-message';
           const messages = [
-            'love you forever <3',
             'ଘ(੭ˊᵕˋ)੭ 𓈒♡ ݁ .',
             '/ᐠ ˵> ⩊ <˵マ',
-            'why not?',
-            'big kisses!',
             '/ᐠ - ⩊ -マ₊˚⊹♡₊ ⊹',
-            'wanna play a game?',
             'see you soon!'
           ];
           const randomMessage = messages[Math.floor(Math.random() * messages.length)];

@@ -40,7 +40,7 @@ export default function AboutPage() {
                                 onboarding the creator economy to various L2 applications #sadge
                             </li>
                             <li>
-                                also had a spinal fusion + failed blood tx, but still alive!
+                                also had a spinal fusion, but alive!
                             </li>
                         </ul>
                         <br />
@@ -87,9 +87,6 @@ export default function AboutPage() {
                             </li>
                             <li>
                                 incident reduction thru on demand cognitive monitoring
-                            </li>
-                            <li>
-                                obedience to faith
                             </li>
                         </ul>
                     </div>
