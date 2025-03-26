@@ -1,31 +1,11 @@
 'use client';
 
 import Header from '../components/Header';
-import Image from 'next/image';
 
-interface Project {
-  title: string;
-  description: string;
-  url: string;
-  imageUrl: string;
-}
+
 
 export default function LinkyPage() {
-  const projects: Project[] = [
-    {
-      title: "CHECKMATE",
-      description: "early-edition @source_os. play chess with her.",
-      url: "https://checkmate-xi.vercel.app/",
-      imageUrl: "/checkmate-preview.jpeg"
-    },
-    {
-      title: "MACH-12",
-      description: "US-made garments and manufacturing for technical companies. retail site here.",
-      url: "https://mach012.com",
-      imageUrl: "/mach12-preview.png"
-    }
-    // Add more projects as needed
-  ];
+
   return (
     <div className="terminal-box">
       <div className="inner-content items-center justify-items-center min-h-screen px-8 sm:px-20 font-[family-name:Akkurat-Mono]" style={{ backgroundColor: 'var(--background)', color: 'var(--foreground)' }}>

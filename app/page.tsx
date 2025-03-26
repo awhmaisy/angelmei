@@ -3,33 +3,13 @@
 import React, { useState, useEffect } from 'react';
 import PageLoader from './components/PageLoader';
 import Header from "./components/Header";
-import Image from 'next/image';
 
-interface Project {
-  title: string;
-  description: string;
-  url: string;
-  imageUrl: string;
-}
+
 
 export default function Home() {
   const [loading, setLoading] = useState(false);
   
-  const projects: Project[] = [
-    {
-      title: "CHECKMATE",
-      description: "early-edition @source_os. play chess with her.",
-      url: "https://checkmate-xi.vercel.app/",
-      imageUrl: "/checkmate-preview.jpeg" // You'll need to add this image to your public folder
-    },
-    {
-      title: "MACH-12",
-      description: "US-made garments and manufacturing for technical companies. retail site here.",
-      url: "https://mach012.com",
-      imageUrl: "/mach12-preview.png" // You'll need to add this image to your public folder
-    }
-    // Add more projects as needed
-  ];
+
 
   useEffect(() => {
     const isFirstVisit = localStorage.getItem('isFirstVisit') === null;

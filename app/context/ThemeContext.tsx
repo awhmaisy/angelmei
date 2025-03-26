@@ -24,6 +24,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     
     // Force a repaint to ensure all elements update their styles
     document.body.style.display = 'none';
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     document.body.offsetHeight; // Trigger a reflow
     document.body.style.display = '';
   }, [theme]);
