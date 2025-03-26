@@ -1,15 +1,38 @@
 'use client';
 
 import Header from '../components/Header';
+import Image from 'next/image';
+
+interface Project {
+  title: string;
+  description: string;
+  url: string;
+  imageUrl: string;
+}
 
 export default function AboutPage() {
+    const projects: Project[] = [
+        {
+            title: "CHECKMATE",
+            description: "early-edition @source_os. play chess with her.",
+            url: "https://checkmate-xi.vercel.app/",
+            imageUrl: "/checkmate-preview.jpeg"
+        },
+        {
+            title: "MACH-12",
+            description: "US-made garments and manufacturing for technical companies. retail site here.",
+            url: "https://mach012.com",
+            imageUrl: "/mach12-preview.png"
+        }
+        // Add more projects as needed
+    ];
     return (
         <div className="terminal-box">
-            <div className="inner-content items-center justify-items-center min-h-screen px-8 sm:px-20 font-[family-name:Akkurat-Mono] bg-black text-white">
+            <div className="inner-content items-center justify-items-center min-h-screen px-8 sm:px-20 font-[family-name:Akkurat-Mono]" style={{ backgroundColor: 'var(--background)', color: 'var(--foreground)' }}>
                 <Header />
                 <main className="flex flex-col row-start-2 items-start max-w-lg">
                     <div>
-                        <h1 className="text-2xl font-[scientificaItalic] text-[#ca9ae5]">maisyworld</h1>
+                        <h1 className="text-2xl font-[scientificaItalic]" style={{ color: 'var(--accent)' }}>maisyworld</h1>
                     </div>
                     <br />
                     <div className="text-xs font-[Akkurat-Mono]">
@@ -89,6 +112,48 @@ export default function AboutPage() {
                                 incident reduction thru on demand cognitive monitoring
                             </li>
                         </ul>
+                    </div>
+                    
+                    <div className="mt-6">
+                        <p>────୨ৎ────</p>
+                        <br />
+                        <p className="text-xs mb-6">happy fun lovely things</p>
+                        
+                        <div className="grid grid-cols-1 gap-6">
+                            {projects.map((project, index) => (
+                                <a 
+                                    key={index} 
+                                    href={project.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer" 
+                                    className="block"
+                                >
+                                    <div className="border p-4" style={{ borderColor: 'var(--accent)', backgroundColor: 'var(--background)' }}>
+                                        <div className="relative w-full mb-4">
+                                            <Image
+                                                src={project.imageUrl}
+                                                alt={project.title}
+                                                width={1920}
+                                                height={1080}
+                                                style={{ width: '100%', height: 'auto' }}
+                                                className="object-left"
+                                                priority
+                                                unoptimized
+                                            />
+                                        </div>
+                                        <h3 className="text-lg mb-2 font-[scientificaItalic]" style={{ color: 'var(--accent)' }}>
+                                            {project.title}
+                                        </h3>
+                                        <p className="text-xs opacity-70">
+                                            {project.description}
+                                        </p>
+                                        <div className="mt-2 text-xs opacity-70" style={{ color: 'var(--accent)' }}>
+                                            ⊹⁎⁺ view project ✧ ♡
+                                        </div>
+                                    </div>
+                                </a>
+                            ))}
+                        </div>
                     </div>
                 </main>
             </div>

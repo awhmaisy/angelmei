@@ -5,9 +5,25 @@
 :root {
   --background: #000000;
   --foreground: #ededed;
+  --accent: #ca9ae5;
+}
+
+html.light-mode {
+  --background: #ffffff;
+  --foreground: #000000;
+  --accent: #ca9ae5;
+}
+
+html.dark-mode {
+  --background: #000000;
+  --foreground: #ededed;
+  --accent: #ca9ae5;
 }
 
 @layer base {
+  html, body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
   body {
     font-family: var(--font-akkurat-mono);
     background-color: var(--background);

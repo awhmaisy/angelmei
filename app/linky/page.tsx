@@ -1,66 +1,89 @@
 'use client';
 
 import Header from '../components/Header';
+import Image from 'next/image';
+
+interface Project {
+  title: string;
+  description: string;
+  url: string;
+  imageUrl: string;
+}
 
 export default function LinkyPage() {
+  const projects: Project[] = [
+    {
+      title: "CHECKMATE",
+      description: "early-edition @source_os. play chess with her.",
+      url: "https://checkmate-xi.vercel.app/",
+      imageUrl: "/checkmate-preview.jpeg"
+    },
+    {
+      title: "MACH-12",
+      description: "US-made garments and manufacturing for technical companies. retail site here.",
+      url: "https://mach012.com",
+      imageUrl: "/mach12-preview.png"
+    }
+    // Add more projects as needed
+  ];
   return (
     <div className="terminal-box">
-      <div className="inner-content items-center justify-items-center min-h-screen px-8 sm:px-20 font-[family-name:Akkurat-Mono] bg-black text-white">
+      <div className="inner-content items-center justify-items-center min-h-screen px-8 sm:px-20 font-[family-name:Akkurat-Mono]" style={{ backgroundColor: 'var(--background)', color: 'var(--foreground)' }}>
         <Header />
         <main className="flex flex-col row-start-2 items-start max-w-lg">
           <div>
-            <h1 className="text-2xl font-[scientificaItalic] text-[#ca9ae5]">links</h1>
+            <h1 className="text-2xl font-[scientificaItalic]" style={{ color: 'var(--accent)' }}>links</h1>
           </div>
           <br />
           <div className="text-xs font-[Akkurat-Mono]">
             <p>
-              send transmissions via pm or email: <a href="mailto:m@mach012.com" target="_blank" className="hover:underline text-[#ca9ae5]">m@mach012.com</a>
+              send transmissions via pm or email: <a href="mailto:m@mach012.com" target="_blank" className="hover:underline" style={{ color: 'var(--accent)' }}>m@mach012.com</a>
             </p>
             <br />
             <p>
-              otherwise, find me on <a href="https://www.twitter.com/awhmaisy/" target="_blank" className="hover:underline text-[#ca9ae5]">x</a> and <a href="https://www.instagram.com/awhmaisy" target="_blank" className="hover:underline text-[#ca9ae5]">instagram (ew).</a> i&apos;d love to hear what you&apos;re building / learning as of late!
+              otherwise, find me on <a href="https://www.twitter.com/awhmaisy/" target="_blank" className="hover:underline" style={{ color: 'var(--accent)' }}>x</a> and <a href="https://www.instagram.com/awhmaisy" target="_blank" className="hover:underline" style={{ color: 'var(--accent)' }}>instagram (ew).</a> i&apos;d love to hear what you&apos;re building / learning as of late!
             </p>
             <br />
             <p>i do like to write</p>
             <ul className="list-none space-y-1">
               <li>
-                <a href="https://awhmaisy.substack.com/" target="_blank" className="hover:underline text-[#ca9ae5]">on substack (temp)</a>
+                <a href="https://awhmaisy.substack.com/" target="_blank" className="hover:underline" style={{ color: 'var(--accent)' }}>on substack (temp)</a>
               </li>
             </ul>
             <br />
             <p>and embed myself into music genres</p>
             <ul className="list-none">
               <li>
-                on <a href="https://open.spotify.com/user/msf84l3xh0uyy5vvf1nn0idon?si=0c35b2db8e264064" target="_blank" className="hover:underline text-[#ca9ae5]">spotify</a>
+                on <a href="https://open.spotify.com/user/msf84l3xh0uyy5vvf1nn0idon?si=0c35b2db8e264064" target="_blank" className="hover:underline" style={{ color: 'var(--accent)' }}>spotify</a>
               </li>
               <li>
-                and <a href="https://soundcloud.com/awhmaisy" target="_blank" className="hover:underline text-[#ca9ae5]">soundcloud</a>
+                and <a href="https://soundcloud.com/awhmaisy" target="_blank" className="hover:underline" style={{ color: 'var(--accent)' }}>soundcloud</a>
               </li>
               <li>
-                on <a href="https://factory.fm/u/meow" target="_blank" className="hover:underline text-[#ca9ae5]">factory.fm</a> (afk)
+                on <a href="https://factory.fm/u/meow" target="_blank" className="hover:underline" style={{ color: 'var(--accent)' }}>factory.fm</a> (afk)
               </li>
             </ul>
             <br />
             <p>and collect images</p>
             <ul className="list-none">
               <li>
-                on are.na <a href="https://are.na/mei-higashi" target="_blank" className="hover:underline text-[#ca9ae5]">@mei-higashi</a>
+                on are.na <a href="https://are.na/mei-higashi" target="_blank" className="hover:underline" style={{ color: 'var(--accent)' }}>@mei-higashi</a>
               </li>
               <li>
-                on pinterest <a href="https://www.pinterest.com/awhmaisy" target="_blank" className="hover:underline text-[#ca9ae5]">@awhmaisy</a>
+                on pinterest <a href="https://www.pinterest.com/awhmaisy" target="_blank" className="hover:underline" style={{ color: 'var(--accent)' }}>@awhmaisy</a>
               </li>
               <li>
-                on cosmos <a href="https://www.cosmos.so/maisy" target="_blank" className="hover:underline text-[#ca9ae5]">@maisy</a>
+                on cosmos <a href="https://www.cosmos.so/maisy" target="_blank" className="hover:underline" style={{ color: 'var(--accent)' }}>@maisy</a>
               </li>
               <li>
-                and a lil on zora <a href="https://www.zora.co/maisy" target="_blank" className="hover:underline text-[#ca9ae5]">@maisy</a> (afk)
+                and a lil on zora <a href="https://www.zora.co/maisy" target="_blank" className="hover:underline" style={{ color: 'var(--accent)' }}>@maisy</a> (afk)
               </li>
             </ul>
             <br />
             <p>and ive recently begun to collect links</p>
             <ul className="list-none space-y-1">
               <li>
-                on pinboard <a href="https://pinboard.in/u:maisy" target="_blank" className="hover:underline text-[#ca9ae5]">@maisy</a>
+                on pinboard <a href="https://pinboard.in/u:maisy" target="_blank" className="hover:underline" style={{ color: 'var(--accent)' }}>@maisy</a>
               </li>
             </ul>
             <br />
@@ -68,7 +91,9 @@ export default function LinkyPage() {
               && lil fun fact, my name is mei higashi :) maisy jay is my stage name and primary handle; so peepl began to call me maisy :0 no preference!
             </p>
           </div>
+  
         </main>
+        
       </div>
     </div>
   );
