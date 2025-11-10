@@ -1,78 +1,54 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import PageLoader from './components/PageLoader';
+import React, { useState } from 'react';
 import Header from "./components/Header";
-
-
+import LoadingScreen from "./components/LoadingScreen";
 
 export default function Home() {
-  const [loading, setLoading] = useState(false);
-  
+  const [loading, setLoading] = useState(true);
 
+  const handleLoadingComplete = () => {
+    setLoading(false);
+  };
 
-  useEffect(() => {
-    const isFirstVisit = localStorage.getItem('isFirstVisit') === null;
-    const navEntry = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
-    const isReload = navEntry.type === 'reload';
-
-    if (isFirstVisit || isReload) {
-      setLoading(true);
-      localStorage.setItem('isFirstVisit', 'false');
-
-      const timer = setTimeout(() => {
-        setLoading(false);
-      }, 4000);
-
-      return () => clearTimeout(timer);
-    }
-  }, []);
+  if (loading) {
+    return <LoadingScreen onComplete={handleLoadingComplete} />;
+  }
 
   return (
-    <>
-      {loading ? (
-        <PageLoader />
-      ) : (
-        <div className="terminal-box">
-          <div className="inner-content items-center justify-items-center min-h-screen px-8 sm:px-20" style={{ backgroundColor: 'var(--background)', color: 'var(--foreground)' }}>
-            <Header />
-            <main className="flex flex-col row-start-2 items-start max-w-lg pb-24">
-              <div>
-                <h1 className="text-2xl font-scientifica italic" style={{ color: 'var(--accent)' }}>maisy</h1>
-                <p>
-                  <a href="https://x.com/awhmaisy" className="text-xs hover:underline">@awhmaisy</a> / <a href="mailto:m@mach012.com" className="text-xs hover:underline">m@mach012.com</a> ⊹⁎⁺ ✧ ♡
-                </p>
-              </div>
-              <br />
-              <div className="text-xs font-akkurat">
-                <p className="mb-6">
-                  hi! i&apos;m a media producer, with expertise in relational engineering && cult building.
-                </p>
-                <p className="mb-6">
-                  i dropped out in 3rd grade to homeschool, commit to side quests and observe product/graphic design at <a href="https://www.artcenter.edu/" style={{ color: 'var(--accent)' }}>ACCD</a>. i was configuring a degree at <a href="https://iovine-young.usc.edu/" style={{ color: 'var(--accent)' }}>USC&apos;s iovine and young academy</a> but have since received callings to industrialize zones in ████ + convalesce!
-                </p>
-                <p>
-                  i also embed and manufacture exclusively US-made garments for technical companies at <a href="https://mach012.com" style={{ color: 'var(--accent)' }}>MACH-12</a>. 
-                </p>
-                <br />
-                <p>────୨ৎ────</p>
-                <br />
-                <p>
-                  current fascinations
-                </p>
-                <ul className="list-none space-y-1">
-                  <li>baby ghostwriting on physics, science and some tech</li>
-                  <li>quantum entanglement of many sorts</li>
-                  <li>dabbling into my reading list</li>
-                  <li>davinci resolve, premiere pro, color grading, oh my!</li>
-                  <li>(still) playing chess - the interplay between human & machine</li>
-                </ul>
-              </div>
-    
-            </main>
+    <div className="min-h-screen flex flex-col px-8 sm:px-20 bg-[var(--background)] text-[var(--foreground)]">
+      <Header />
+      <div className="flex-1 flex flex-col justify-center">
+        <main className="flex flex-col items-start max-w-lg mx-auto font-msgothic">
+          <div>
+            <h1 className="text-2xl font-msgothic text-[#ca9ae5] mb-2">maisy</h1>
+            <p className="text-xs">
+              <a href="mailto:m@mach012.com" className="text-[#ca9ae5] hover:underline">m@mach012.com</a> / <a href="https://x.com/awhmaisy" className="text-[#ca9ae5] hover:underline">x.com/awhmaisy</a>
+            </p>
           </div>
-        </div>
-      )}
-    </>
+          <br />
+          <div className="text-xs font-msgothic">
+            <p className="mb-6">
+              hi! i&apos;m an ex-social media producer + manager, with expertise in relational engineering && cult building.
+            </p>
+            <p className="mb-6">
+              i dropped out in 3rd grade to homeschool, commit to side quests and observe product/graphic design at <a href="https://www.artcenter.edu/" className="text-[#ca9ae5] hover:underline">ACCD</a>. i was configuring a degree at <a href="https://iovine-young.usc.edu/" className="text-[#ca9ae5] hover:underline">USC&apos;s iovine and young academy</a> but have since received callings to industrialize zones in ████ + convalesce!
+            </p>
+            <p>
+              i also embed and manufacture exclusively US-made garments for technical companies at <a href="https://mach012.com" className="text-[#ca9ae5] hover:underline">MACH-12</a>. 
+            </p>
+            <br />
+            <p>────୨ৎ────</p>
+            <br />
+            <p className="mb-2">
+              current fascinations
+            </p>
+            <ul className="list-none space-y-1">
+              <li>hmm..mystery</li>
+            </ul>
+          </div>
+        </main>
+      </div>
+    </div>
   );
 }

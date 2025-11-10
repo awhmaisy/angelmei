@@ -8,22 +8,19 @@ export default function Header() {
 
   return (
     <nav className="flex flex-col justify-center items-center my-2.5">
-      <div className="text-center text-xs font-[Geist] text-[var(--accent)]">
-        ( -_•)︻デ═一 ---- ✧˖°⋆ﾟ⊹⁎⁺˳✧༚♡
-      </div>
-      <div className="flex gap-2 text-[20px] font-[Creep] text-[var(--accent)]" style={{ alignItems: 'baseline' }}>
-        <Link href="/" className="nav-link" style={{ display: 'inline-block' }}>hi</Link> / 
-        <Link href="/linky" className="nav-link" style={{ display: 'inline-block' }}>linky</Link> / 
-        <Link href="/abt" className="nav-link" style={{ display: 'inline-block' }}>fun</Link> / 
+      <div className="flex gap-4 text-sm font-msgothic text-white">
+        <Link href="/" className="nav-link hover:underline">hai</Link>
+        <Link href="/linky" className="nav-link hover:underline">linky</Link>
+        <Link href="/lexicon" className="nav-link hover:underline">lexicon</Link>
         <button 
-          className="nav-link" 
+          className="nav-link hover:underline" 
           onClick={toggleTheme}
           aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-          style={{ cursor: 'pointer', display: 'inline-flex', alignItems: 'center', paddingBottom: '2px' }}
+          style={{ cursor: 'pointer' }}
         >
-          <span style={{ fontSize: '0.6em', display: 'inline-block', transform: 'translateY(2px)' }}>{theme === 'dark' ? '電気つけて！' : '電気消して！'}</span>
-        </button> / 
-        <button className="nav-link" style={{ display: 'inline-block' }} onClick={() => {
+          <span style={{ fontSize: '0.8em' }}>{theme === 'dark' ? '電気つけて！' : '電気消して！'}</span>
+        </button>
+        <button className="nav-link hover:underline" onClick={() => {
           const existingPopup = document.querySelector('.popup-message');
           if (existingPopup) {
             document.body.removeChild(existingPopup);
@@ -47,7 +44,7 @@ export default function Header() {
           popup.style.padding = '10px';
           popup.style.paddingTop = '100px';
           popup.style.zIndex = '1000';
-          popup.style.fontFamily = 'Garmin10';
+          popup.style.fontFamily = 'var(--font-msgothic)';
           document.body.appendChild(popup);
           setTimeout(() => {
             if (document.body.contains(popup)) {

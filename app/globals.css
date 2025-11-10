@@ -2,142 +2,122 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'MSGothic';
+  src: url('./assets/fonts/MS Gothic Font.ttf') format('truetype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
-  --background: #000000;
-  --foreground: #ededed;
-  --accent: #ca9ae5;
+  --background-color: black;
+  --text-color: white;
+  --accent: #EA9AE5;
 }
 
-html.light-mode {
-  --background: #ffffff;
-  --foreground: #000000;
-  --accent: #ca9ae5;
-}
-
-html.dark-mode {
-  --background: #000000;
-  --foreground: #ededed;
-  --accent: #ca9ae5;
+.light-mode {
+  --background-color: white;
+  --text-color: black;
 }
 
 @layer base {
   html, body {
     transition: background-color 0.3s ease, color 0.3s ease;
   }
+  
   body {
-    font-family: var(--font-akkurat-mono);
-    background-color: var(--background);
-    color: var(--foreground);
+    font-size: 13px;
+    width: 600px;
+    margin: auto;
+    margin-top: 20vh;
+    font-family: 'MSGothic', monospace, sans-serif;
+    margin-bottom: 20vh;
+    line-height: 1.25em;
+    color: var(--text-color);
+    position: relative;
+    background-color: var(--background-color);
   }
 
-  h1, h2, h3 {
-    font-family: var(--font-scientifica);
+  body main {
+    position: relative;
+    z-index: 2;
   }
 
-  .font-scientifica {
-    font-family: var(--font-scientifica);
+  body a {
+    color: var(--accent);
   }
 
-  .font-akkurat {
-    font-family: var(--font-akkurat-mono);
+  body .thread {
+    color: var(--accent);
+    text-decoration: none;
   }
 
-  .font-creep {
-    font-family: var(--font-creep);
+  body .thread:hover {
+    text-decoration: underline;
   }
 
-  .font-garmin {
-    font-family: var(--font-garmin);
+  body hr {
+    border: none;
+    text-align: center;
+    color: var(--text-color);
+  }
+
+  body hr::before {
+    content: "✦ . 　⁺ 　 . ✦ . 　⁺ 　 . ✦";
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  body p:not(:nth-child(2)) {
+    margin-top: 30px;
+  }
+
+  body p:nth-child(2) {
+    margin-top: 0px;
+  }
+
+  body h3:first-child {
+    margin-bottom: 5px;
+  }
+
+  body h4 {
+    margin-top: 30px;
+  }
+
+  body h5 {
+    margin: 0px;
+    font-weight: 100;
+  }
+
+  body ul, body ol {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  body li::before {
+    content: "> ";
+    color: var(--text-color);
+  }
+
+  .light-mode body hr {
+    color: black;
+  }
+
+  .light-mode body li::before {
+    color: black;
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #000000;
-    --foreground: #ededed;
+@media only screen and (max-width: 650px) {
+  body {
+    width: 90vw !important;
+  }
+
+  #arona {
+    display: none;
+  }
+
+  #text {
+    display: none;
   }
 }
-
-body {
-  font-size: 13px;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 2px;
-  padding-right: 2px;
-  padding-top: 20vh;
-  position: relative;
-  min-height: 100vh;
-}
-
-body hr {
-  border: none; 
-  text-align: center; 
-  color: white;
-  content: "✦ . 　⁺ 　 . ✦ . 　⁺ 　 . ✦"; 
-}
-
-body hr::before {
-  content: "✦ . 　⁺ 　 . ✦ . 　⁺ 　 . ✦"; 
-  display: inline-block;
-  margin-right: 10px; 
-}
-
-body ul, body ol {
-  list-style: none;
-  padding-left: 0;
-}
-
-body li::before {
-  content: ">";
-  margin-right: 0.5em;
-}
-
-body a:hover:not(.nav-link) {
-  text-decoration: underline;
-}
-
-/* .terminal-box {
-  position: relative;
-  margin: 20px auto;
-  max-width: 800px;
-  padding: 20px 20px; 
-  box-sizing: border-box;
-  background-color: #000;
-  color: #fff; 
-}
-
-.terminal-box::before,
-.terminal-box::after {
-  content: " ";
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #ca9ae5;
-  font-size: 0.8rem;
-}
-
-.terminal-box::before {
-  content: "╭────── · · ୨୧ · · ──────╮";
-  top: -20px;
-}
-
-.terminal-box::after {
-  content: "╰────── · · ୨୧ · · ──────╯";
-  bottom: -20px;
-}
-
-.inner-content {
-  max-width: 100%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-}
-.terminal-box::before {
-  content: "╭────── · · ୨୧ · · ──────╮";
-  top: -20px;
-}
-
-*/

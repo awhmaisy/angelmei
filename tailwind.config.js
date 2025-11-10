@@ -8,10 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        scientifica: ['var(--font-scientifica)'],
-        akkurat: ['var(--font-akkurat-mono)'],
-        creep: ['var(--font-creep)'],
-        garmin: ['var(--font-garmin)'],
+        msgothic: ['var(--font-msgothic)', 'system-ui', 'sans-serif']
       },
     },
   },
